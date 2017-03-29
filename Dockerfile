@@ -25,6 +25,8 @@ ADD webvirtmgr /srv/webvirtmgr
 RUN pip install --no-cache-dir --upgrade -r /srv/webvirtmgr/requirements.txt && \
     find / -name '*.pyc' -or -name '*.pyo' -delete
 
+ADD uwsgi.yaml /srv/uwsgi.yaml
+
 EXPOSE 8000
 
 ENTRYPOINT ["/usr/sbin/uwsgi", "-y", "/srv/uwsgi.yaml"]

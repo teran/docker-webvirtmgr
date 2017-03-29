@@ -1,9 +1,10 @@
 uwsgi:
+  plugins: python
   uid: nobody
   gid: nogroup
-  http: 0.0.0.0:8000
+  http-socket: 0.0.0.0:8000
   chdir: /srv/webvirtmgr
-  module: "webvirtmgr.wsgi:application"
+  module: webvirtmgr.wsgi:application
   master: True
   pidfile: /tmp/webvirtmgr-master.pid
   vacuum: True
