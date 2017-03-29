@@ -10,6 +10,7 @@ RUN apk --update --no-cache add \
       python \
       python-dev \
       py2-libvirt \
+      py-libxml2 \
       py2-pip \
       openssl && \
     rm -vf /var/cache/apk/* && \
