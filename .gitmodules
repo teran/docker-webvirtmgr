@@ -1,0 +1,3 @@
+[submodule "webvirtmgr"]
+	path = webvirtmgr
+	url = https://github.com/retspen/webvirtmgr.git
