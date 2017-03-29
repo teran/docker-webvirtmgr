@@ -12,7 +12,8 @@ RUN apk --update --no-cache add \
       py2-libvirt \
       py-libxml2 \
       py2-pip \
-      openssl && \
+      openssl \
+      uwsgi-python && \
     rm -vf /var/cache/apk/* && \
     update-ca-certificates
 
@@ -26,4 +27,4 @@ RUN pip install --no-cache-dir --upgrade -r /srv/webvirtmgr/requirements.txt && 
 
 EXPOSE 8000
 
-ENTRYPOINT ["/srv/webvirtmgr/manage.py", "runserver", "0.0.0.0:8000"]
+ENTRYPOINT ["/usr/sbin/uwsgi", "-y", "/srv/uwsgi.yaml"]

@@ -1,0 +1,11 @@
+uwsgi:
+  uid: nobody
+  gid: nogroup
+  http: 0.0.0.0:8000
+  chdir: /srv/webvirtmgr
+  module: "webvirtmgr.wsgi:application"
+  master: True
+  pidfile: /tmp/webvirtmgr-master.pid
+  vacuum: True
+  max-requests: 5000
+  static-map: /static=/srv/webvirtmgr/webvirtmgr/static
